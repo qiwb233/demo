@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	*{
+		padding:0;
+		margin:0;
+	}
+	body{
+		width:100%;
+	}
+	
+	ul{
+		position:relative;
+		list-style:none;
+		width:100%;
+	}
+	ul li {
+		position:absolute;
+		width:50%;
+		left:25%;
+	}
+	ul li img{
+		width:100%;
+	}
+
+	.qw{
+		display:none;
+	}
+	.qe{
+		display:block;
+	}
+	</style>
+</head>
+<body>
+	<div id="total">
+		<ul id="lbt">
+			<li><img src="resouce/to.jpg"></li>
+			<li><img src="resouce/tto.jpg"></li>
+			<li><img src="resouce/ttto.jpg"></li>
+		</ul>
+	</div>
+
+	<script type="text/javascript">
+		//有些投机取巧了 
+		//想法：分别为显示与隐藏的图片定义好两个class，每次执行定时器先将所有图片隐藏，之后将该显示图片显示。
+			var count=0;
+			var item=null;
+			item=setInterval(function(){
+				for(var i=0;i<document.getElementsByTagName('li').length;i++){
+					document.getElementsByTagName('li')[i].className='qw';
+					}
+			document.getElementsByTagName('li')[count].className='qe'; 
+			if(count==2){
+				count=0;
+			}else{
+				count++;
+				}
+			},2000)
+
+
+
+
+	</script>
+</body>
+</html>
